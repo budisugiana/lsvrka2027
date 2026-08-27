@@ -1966,56 +1966,48 @@
 
         // ------------------------------------------------------------
         // DEFINISI KOLOM (sama untuk semua paket — bersumber dari 1 sheet)
+        https://docs.google.com/spreadsheets/d/1d9-y7yUJJ-mPl-NXWdyc-sCgNfph4JvQNNm5zixPm_g/edit?gid=1532565040#gid=1532565040
         // ------------------------------------------------------------
         const FIELD_DEFS = [
             { key: "uic", label: "UIC", type: "text", group: "Informasi Program" },
             { key: "nama_program", label: "Nama Program", type: "text", group: "Informasi Program", full: true },
-            { key: "learning_goals", label: "Learning Goals", type: "textarea", group: "Informasi Program", full: true },
-            { key: "metode_pembelajaran", label: "Konfirmasi Metode Pembelajaran", type: "text", group: "Informasi Program" },
+            { key: "goals", label: "Goals", type: "textarea", group: "Informasi Program", full: true },
+            { key: "bln_awal_periode", label: "Bulan Awal Periode Pelaksanaan", type: "text", group: "Informasi Program" },
+            { key: "bln_akhir_periode", label: "Bulan Akhir Periode Pelaksanaan", type: "text", group: "Informasi Program" },
 
-            { key: "awal_periode", label: "Awal Periode Pelaksanaan", type: "date", group: "Periode Pelaksanaan" },
-            { key: "akhir_periode", label: "Akhir Periode Pelaksanaan", type: "date", group: "Periode Pelaksanaan" },
-            { key: "rev_awal_periode", label: "Rev. Awal Periode Pelaksanaan", type: "date", group: "Periode Pelaksanaan" },
-            { key: "rev_akhir_periode", label: "Rev. Akhir Periode Pelaksanaan", type: "date", group: "Periode Pelaksanaan" },
-            { key: "bulan_mulai", label: "Bulan Mulai", type: "text", group: "Periode Pelaksanaan" },
-            { key: "bulan_akhir", label: "Bulan Akhir", type: "text", group: "Periode Pelaksanaan" },
-            { key: "durasi_bulan", label: "Durasi Bulan", type: "number", group: "Periode Pelaksanaan" },
+            { key: "tagging_jenis_anggaran", label: "Tagging Jenis Anggaran", type: "text", group: "Klasifikasi & Peserta" },
+            { key: "nama_account", label: "Nama Account", type: "text", group: "Klasifikasi & Peserta" },
+            { key: "natural_account", label: "Natural Account", type: "text", group: "Klasifikasi & Peserta" },
+            { key: "latar_belakang_prioritas", label: "Latar Belakang/Prioritas", type: "textarea", group: "Klasifikasi & Peserta" },
+            { key: "klasifikasi_program_1", label: "Klasifikasi Program (1)", type: "text", group: "Klasifikasi & Peserta" },
+            { key: "klasifikasi_program_2", label: "Klasifikasi Program (2)", type: "text", group: "Klasifikasi & Peserta" },
+            { key: "klasifikasi_program_3", label: "Klasifikasi Program (3)", type: "text", group: "Klasifikasi & Peserta" },
+            { key: "jenjang_peserta", label: "Jenjang Peserta", type: "text", group: "Klasifikasi & Peserta" },
+            { key: "divisi_satuan_wilayah_peserta", label: "Divisi/Satuan/Wilayah Peserta", type: "text", group: "Klasifikasi & Peserta" },
+            { key: "nama_posisi_peserta", label: "Nama Posisi Peserta", type: "text", group: "Klasifikasi & Peserta" },
 
-            { key: "status_progress_realisasi", label: "Status Progress Realisasi", type: "text", group: "Progress & Biaya" },
-            { key: "nilai_per_bulan", label: "Nilai per Bulan", type: "number", group: "Progress & Biaya" },
-            { key: "total_estimasi_biaya", label: "Total Estimasi Biaya", type: "number", group: "Progress & Biaya" },
-            { key: "revisi_total_estimasi_biaya", label: "Revisi Total Estimasi Biaya", type: "number", group: "Progress & Biaya" },
-            { key: "status_pelaksanaan_program", label: "Status Pelaksanaan Program", type: "text", group: "Progress & Biaya" },
-            { key: "keterangan_perubahan", label: "Keterangan Perubahan dan Strategi Close the Gap", type: "textarea", group: "Progress & Biaya", full: true },
+            { key: "dewan_komisaris", label: "Dewan Komisaris", type: "number", group: "Peserta & Metode" },
+            { key: "direksi", label: "Direksi", type: "number", group: "Peserta & Metode" },
+            { key: "pejabat_eksekutif", label: "Pejabat Eksekutif", type: "number", group: "Peserta & Metode" },
+            { key: "jabatan_lainnya", label: "Jabatan Lainnya", type: "number", group: "Peserta & Metode" },
+            { key: "jumlah_peserta", label: "Jumlah Peserta", type: "number", group: "Peserta & Metode" },
+            { key: "metode_pelaksanaan", label: "Metode Pelaksanaan", type: "text", group: "Peserta & Metode" },
 
-            { key: "bulan_1", label: "Bulan 1", type: "number", group: "Realisasi Bulanan" },
-            { key: "bulan_2", label: "Bulan 2", type: "number", group: "Realisasi Bulanan" },
-            { key: "bulan_3", label: "Bulan 3", type: "number", group: "Realisasi Bulanan" },
-            { key: "bulan_4", label: "Bulan 4", type: "number", group: "Realisasi Bulanan" },
-            { key: "bulan_5", label: "Bulan 5", type: "number", group: "Realisasi Bulanan" },
-            { key: "bulan_6", label: "Bulan 6", type: "number", group: "Realisasi Bulanan" },
-            { key: "bulan_7", label: "Bulan 7", type: "number", group: "Realisasi Bulanan" },
-            { key: "bulan_8", label: "Bulan 8", type: "number", group: "Realisasi Bulanan" },
-            { key: "bulan_9", label: "Bulan 9", type: "number", group: "Realisasi Bulanan" },
-            { key: "bulan_10", label: "Bulan 10", type: "number", group: "Realisasi Bulanan" },
-            { key: "bulan_11", label: "Bulan 11", type: "number", group: "Realisasi Bulanan" },
-            { key: "bulan_12", label: "Bulan 12", type: "number", group: "Realisasi Bulanan" },
+            { key: "biaya_sertifikasi", label: "Biaya Sertifikasi", type: "number", group: "Rincian Biaya" },
+            { key: "biaya_fasilitator_internal", label: "Biaya Fasilitator Internal", type: "number", group: "Rincian Biaya" },
+            { key: "biaya_fasilitator_eksternal", label: "Biaya Fasilitator Eksternal", type: "number", group: "Rincian Biaya" },
+            { key: "biaya_transportasi", label: "Biaya Transportasi", type: "number", group: "Rincian Biaya" },
+            { key: "biaya_akomodasi", label: "Biaya Akomodasi", type: "number", group: "Rincian Biaya" },
+            { key: "biaya_konsumsi", label: "Biaya Konsumsi", type: "number", group: "Rincian Biaya" },
+            { key: "biaya_dop", label: "Biaya DOP", type: "number", group: "Rincian Biaya" },
+            { key: "total_estimasi_biaya", label: "Total Estimasi Biaya", type: "number", group: "Rincian Biaya" },
 
-            { key: "cek", label: "CEK", type: "text", group: "Cek & Akrual" },
-            { key: "akr_jan", label: "Jan (10% x Accr Jan)", type: "number", group: "Cek & Akrual" },
-            { key: "akr_feb", label: "Feb (20% x Accr Jan)", type: "number", group: "Cek & Akrual" },
-            { key: "akr_mar", label: "Mar (10% x Accr Jan + Accr Feb)", type: "number", group: "Cek & Akrual" },
-            { key: "akr_apr", label: "Apr (Accr Mar)", type: "number", group: "Cek & Akrual" },
-            { key: "akr_mei", label: "Mei (Accr Apr)", type: "number", group: "Cek & Akrual" },
-            { key: "akr_jun", label: "Jun (Accr Mei)", type: "number", group: "Cek & Akrual" },
-            { key: "akr_jul", label: "Jul (Accr Jun)", type: "number", group: "Cek & Akrual" },
-            { key: "akr_agu", label: "Agu (Accr Jul)", type: "number", group: "Cek & Akrual" },
-            { key: "akr_sep", label: "Sep (Accr Agu)", type: "number", group: "Cek & Akrual" },
-            { key: "akr_okt", label: "Okt (Accr Sep)", type: "number", group: "Cek & Akrual" },
-            { key: "akr_nov", label: "Nov (Accr Okt)", type: "number", group: "Cek & Akrual" },
-            { key: "akr_des", label: "Des (Accr Nov + Accr Des)", type: "number", group: "Cek & Akrual" }
+            { key: "nama_project_pengadaan", label: "Nama Project Pengadaan (Jika Ada)", type: "text", group: "Lain-Lain" },
+            { key: "nominal_project_pengadaan", label: "Nominal Project Pengadaan (Jika Ada)", type: "number", group: "Lain-Lain" },
+            { key: "catatan", label: "Catatan", type: "textarea", group: "Lain-Lain" },
+            { key: "final_nomina", label: "FINAL NOMINA", type: "number", group: "Lain-Lain" }
         ];
-        const GROUPS = ["Informasi Program", "Periode Pelaksanaan", "Progress & Biaya", "Realisasi Bulanan", "Cek & Akrual"];
+        const GROUPS = ["Informasi Program", "Klasifikasi & Peserta", "Peserta & Metode", "Rincian Biaya", "Lain-Lain"];
         const DATE_FIELDS = FIELD_DEFS.filter(f => f.type === "date").map(f => f.key);
         const NUMBER_FIELDS = FIELD_DEFS.filter(f => f.type === "number").map(f => f.key);
         function cssKey(k) { return k.replace(/[^a-zA-Z0-9]/g, "_"); }
@@ -2030,7 +2022,7 @@
                 {
                     id: "p1", icon: "📋",
                     title: "Rencana Kerja Anggaran",
-                    groups: ["Informasi Program", "Periode Pelaksanaan", "Progress & Biaya", "Realisasi Bulanan", "Cek & Akrual"]
+                    groups: ["Informasi Program", "Klasifikasi & Peserta", "Peserta & Metode", "Rincian Biaya", "Lain-Lain"]
                 }
             ];
         }
@@ -2382,7 +2374,7 @@
                 options.scales[valAxis].ticks = options.scales[valAxis].ticks || {};
                 options.scales[valAxis].ticks.font = options.scales[valAxis].ticks.font || { size: 9 };
                 if (t !== "stacked100Column") {
-                    options.scales[valAxis].ticks.callback = function(value) {
+                    options.scales[valAxis].ticks.callback = function (value) {
                         return formatChartValue(value, cfg.numberFormat || 'full');
                     };
                 }
@@ -2561,7 +2553,7 @@
             const allLabelCheckboxes = Array.from(document.querySelectorAll("#chartLabelValues input[data-chartlabelvalue]"));
             const checkedLabelValues = allLabelCheckboxes.filter(el => el.checked).map(el => el.dataset.chartlabelvalue);
             if (allLabelCheckboxes.length && !checkedLabelValues.length) { showAlert("Pilih minimal 1 isi kategori untuk ditampilkan pada grafik.", "error"); return; }
-            
+
             // Cek apakah urutan di DOM sama dengan urutan default (alphabetical)
             const defaultOrderValues = getUniqueChartLabelValues(document.getElementById("chart_labelField").value);
             const currentDOMValues = allLabelCheckboxes.map(el => el.dataset.chartlabelvalue);
