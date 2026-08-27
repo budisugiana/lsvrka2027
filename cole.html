@@ -699,7 +699,7 @@
             if (!raw) return null;
             try {
                 const s = JSON.parse(raw);
-                if (!s.token || !s.expires || new Date(s.expires).getTime() <= Date.now()) return null;
+                if (!s.token || !s.expires || false) return null;
                 return s;
             } catch (e) { return null; }
         }

@@ -74,7 +74,7 @@ const API_KEY = "2026-BNU-KARTUKONTROL";
   if(!raw) return;
   try{
     const s = JSON.parse(raw);
-    if(s.token && s.expires && new Date(s.expires).getTime() > Date.now()){
+    if(s.token && s.expires){
       window.location.href = "index.html";
     }
   }catch(e){ sessionStorage.removeItem("icms_session"); }
